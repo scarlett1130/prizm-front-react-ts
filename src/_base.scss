@@ -1,0 +1,14 @@
+$res-break: 1120px;
+$smart: 500px;
+$tablet: 768px;
+@mixin media-sreen($res-break) {
+    @media screen and (max-width: $res-break) {
+        @content;
+    }
+}
+
+@mixin flex_align() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

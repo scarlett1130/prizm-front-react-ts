@@ -1,0 +1,125 @@
+@import 'base';
+@import url('https://fonts.googleapis.com/css?family=Inter');
+.App {
+    text-align: center;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(180deg, #000000 0%, #000000 10%, #2E2E2E 100%)!important;
+    overflow-x: hidden;
+}
+
+.maincontainer {
+    max-width: 1030px;
+    margin: auto;
+    width: 96%;
+    @include media-sreen($smart) {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+.ui.dropdown>.text {
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #F9E8DB;
+}
+
+.ui.selection.dropdown {
+    background: transparent!important;
+    border: 1px solid #F9E8DB!important;
+    border-radius: 5vw!important;
+    min-width: 130px !important;
+    height: 30px !important;
+}
+
+.text {
+    font-family: 'SF Pro Text';
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.ui.dropdown .menu .selected.item,
+.ui.dropdown.selected {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ui.selection.dropdown .menu>.item {
+    padding-left: 0.78571429em !important;
+}
+
+.ui.fluid.dropdown>.dropdown.icon {
+    display: none !important;
+    width: 153.6px;
+}
+
+.ui.dropdown .menu>.item>.image,
+.ui.dropdown .menu>.item>img,
+.ui.dropdown>.text>.image,
+.ui.dropdown>.text>img {
+    width: 18px!important;
+}
+
+.ui.selection.visible.dropdown>.text:not(.default) {
+    color: #F9E8DB !important;
+}
+
+.ui.active.selection.dropdown {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.ui.button {
+    margin-right: 14px!important;
+}
+
+.ui.button,
+.ui.buttons .button,
+.ui.buttons .or {
+    width: 145px!important;
+    color: black!important;
+    font-family: 'SF Pro Text'!important;
+    font-style: normal!important;
+    font-weight: 700!important;
+    font-size: 12px!important;
+    line-height: 14px!important;
+    text-align: center!important;
+    border-radius: 40px!important;
+}
+
+.ui.dimmer {
+    background: linear-gradient(118.39deg, rgba(98, 126, 234, 0.75) 0%, rgba(0, 0, 0, 0.75) 67.23%);
+    backdrop-filter: blur(10px);
+}
+
+.ui.fullscreen.modal>.close {
+    color: white !important;
+    position: fixed;
+}
+
+button {
+    border: 1px solid #eee;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    background-color: transparent;
+    &:hover {
+        border-color: black;
+        background: black;
+        // color: white;
+    }
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: local('SF Pro Text'), url(./fonts/FontsFree-Net-SFProText-Regular.ttf) format('truetype');
+}

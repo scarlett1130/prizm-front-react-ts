@@ -1,0 +1,16 @@
+@import '../../base';
+.item {
+    width: 132px;
+    height: 126px;
+    background: #000000;
+    border: 0.5px solid #BFBFBF;
+    backdrop-filter: blur(100px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    color: white;
+    @include flex_align;
+    display: grid;
+    text-align: center;
+    align-content: center;
+    // margin: auto 0;
+}

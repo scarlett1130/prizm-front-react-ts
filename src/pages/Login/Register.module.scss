@@ -1,0 +1,43 @@
+@import '../../base';
+.signup {
+    color: white;
+    @include flex_align;
+    display: grid;
+    margin: auto;
+    text-align: center;
+    gap: 20px;
+    padding-top: 130px;
+    .header {
+        p {
+            font-size: 36px;
+        }
+        padding: 20px 0;
+    }
+    .body {
+        // @include flex_align;
+        display: grid;
+        gap: 20px;
+        padding: 20px, 0;
+        div {
+            @include flex_align;
+            p {
+                margin: auto;
+                padding: 0 10px;
+            }
+        }
+    }
+    .footer {
+        @include flex_align;
+        gap: 10px;
+        button {
+            width: 120px;
+            height: 28px;
+            background: #101010;
+            border: 1px solid #D6D6D6;
+            border-radius: 30px;
+            color: white;
+            margin: auto;
+            @include flex_align;
+        }
+    }
+}

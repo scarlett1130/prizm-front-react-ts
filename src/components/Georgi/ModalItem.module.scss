@@ -1,0 +1,79 @@
+@import '../../base';
+.item {
+    display: grid;
+    color: white;
+    width: 365px;
+    font-size: 12px;
+    .header {
+        @include flex_align;
+        display: inline-block;
+        text-align: center;
+        height: 202px;
+        background: #000000;
+        border: 0.5px solid #BFBFBF;
+        backdrop-filter: blur(100px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 20px 20px 0px 0px;
+        p:first-child {
+            font-size: 22px;
+            margin: 0;
+            padding-top: 10px
+        }
+        .img {
+            @include flex_align;
+            gap: 20px;
+            padding-top: 10px;
+        }
+    }
+    .body {
+        display: inline-block;
+        height: 234px;
+        background: #1F1F1F;
+        border: 0.5px solid #BFBFBF;
+        backdrop-filter: blur(100px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 0px 0px 20px 20px;
+        .body_top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+            p {
+                margin-bottom: 5px;
+            }
+            .btn {
+                // align-items: center;
+                max-width: 150px;
+                .line {
+                    @include flex_align;
+                    margin: 0 auto;
+                    height: 20px;
+                    width: 0;
+                    border: 1px solid white;
+                }
+                button {
+                    width: 150px;
+                    height: 28px;
+                    background: #101010;
+                    border: 1px solid #D6D6D6;
+                    border-radius: 5px;
+                    color: white;
+                    // margin-top: 10px;
+                }
+            }
+        }
+        .body_bottom {
+            @include flex_align;
+            padding: 10px 0;
+            button {
+                width: 104px;
+                height: 27px;
+                border: 0.5px solid #BFBFBF;
+                backdrop-filter: blur(100px);
+                /* Note: backdrop-filter has minimal browser support */
+                border-radius: 20px;
+                color: white;
+                margin: 0 10px;
+            }
+        }
+    }
+}

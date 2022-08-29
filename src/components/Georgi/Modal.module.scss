@@ -1,0 +1,85 @@
+@import '../../base';
+.content {
+    color: white;
+    max-width: 1280px;
+    // display: inline-block;
+    margin: 0 auto;
+    padding: 20px 0;
+    .top {
+        @include flex_align;
+        align-items: baseline;
+        // margin: 0 auto;
+        gap: 20px;
+        .ModalItem {
+            display: grid;
+            gap: 20px;
+            .RunBtn {
+                @include flex_align;
+                button {
+                    width: 77px;
+                    height: 30px;
+                    left: 366px;
+                    top: 619px;
+                    background: #FFFFFF;
+                    border-radius: 40px;
+                }
+            }
+        }
+        @include media-sreen(950px) {
+            flex-wrap: wrap;
+            gap: calc(20/950*100vw);
+        }
+        .item {
+            // padding: 0;
+            display: grid;
+            gap: 20px;
+            .item_header {
+                width: 462px;
+                height: 176px;
+                background: #000000;
+                border: 0.5px solid #BFBFBF;
+                backdrop-filter: blur(100px);
+                /* Note: backdrop-filter has minimal browser support */
+                border-radius: 20px;
+                font-size: 12px;
+                padding: 20px;
+            }
+            .item_body {
+                display: grid;
+                gap: 20px;
+                .item_data {
+                    @include flex_align;
+                    .line {
+                        height: 0;
+                        width: 33px;
+                        border: 1px solid white;
+                    }
+                }
+                button {
+                    width: 77px;
+                    height: 30px;
+                    background: #FFFFFF;
+                    border-radius: 40px;
+                }
+            }
+        }
+    }
+    .bottom {
+        color: white;
+        p {
+            font-size: 22px;
+        }
+        .miniItem {
+            @include flex_align;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            @include media-sreen(950px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @include media-sreen(700px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

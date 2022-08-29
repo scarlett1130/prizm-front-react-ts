@@ -1,0 +1,15 @@
+@import '../../base';
+.item {
+    .btn {
+        @include flex_align;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        width: 145px;
+        height: 30px;
+        background: #FFFFFF;
+        border-radius: 40px;
+        margin: 10px auto;
+        font-size: 12px;
+    }
+}

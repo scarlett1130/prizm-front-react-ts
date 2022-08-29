@@ -1,0 +1,73 @@
+@import '../../base';
+.item {
+    display: grid;
+    // width: 244px;
+    .header {
+        @include flex_align;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        height: 126px;
+        background: #000000;
+        border: 0.5px solid #BFBFBF;
+        backdrop-filter: blur(100px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 20px 20px 0px 0px;
+        gap: 20px;
+    }
+    .body {
+        height: 119px;
+        background: #1F1F1F;
+        border: 0.5px solid #BFBFBF;
+        backdrop-filter: blur(100px);
+        /* Note: backdrop-filter has minimal browser support */
+        border-radius: 0px 0px 20px 20px;
+        padding: 20px;
+        font-size: 12px;
+        font-weight: normal;
+        color: #F9E8DB;
+        display: grid;
+        hr {
+            width: 100%;
+        }
+        .star_txt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left {
+                font-size: 16px;
+                font-weight: bold;
+            }
+            .star {
+                @include flex_align;
+                // display: flex;
+                // justify-content: center;
+                // align-items: center;
+                font-weight: normal;
+                font-size: 14px;
+            }
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button {
+                width: 104px;
+                height: 27px;
+                // left: 137px;
+                // top: 539px;
+                border: 0.5px solid #BFBFBF;
+                backdrop-filter: blur(100px);
+                /* Note: backdrop-filter has minimal browser support */
+                border-radius: 20px;
+                @include flex_align;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                color: #F9E8DB;
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+}

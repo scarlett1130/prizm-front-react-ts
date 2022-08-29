@@ -1,0 +1,41 @@
+@import '../../base';
+.index {
+    max-width: 1280px;
+    @include flex_align;
+    margin: 0 auto;
+    justify-content: flex-start;
+    padding-top: 100px;
+    gap: 30px;
+    @include media-sreen(900px) {
+        flex-wrap: wrap;
+        gap: calc(10/900*100vw);
+    }
+    .right {
+        color: #F9F0EA;
+        font-size: 16px;
+        display: inline-block;
+        margin: 0 auto;
+        p {
+            font-weight: 500;
+            line-height: 24px;
+        }
+        .btn {
+            @include flex_align;
+            gap: 30px;
+            button:first-child {
+                width: 145px;
+                height: 30px;
+                background-color: #F9F0EA;
+                border-radius: 40px;
+            }
+            button:last-child {
+                color: #F9F0EA;
+                width: 145px;
+                height: 30px;
+                background-color: black;
+                border: 1px solid #F9F0EA;
+                border-radius: 40px;
+            }
+        }
+    }
+}
