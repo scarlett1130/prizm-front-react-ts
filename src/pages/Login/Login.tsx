@@ -9,7 +9,7 @@ import { Button, Input, Icon, Modal } from 'semantic-ui-react'
 // import { TodoState } from '../../store/todo/action-types';
 import { Dispatch } from "redux";
 import apiCall from '../../services/apiCall';
-
+import setAuthToken from "../../utils/setAuthToken";
 
 interface LoginProps {
   // login: Function;
@@ -33,6 +33,7 @@ const LoginPage: React.FC<LoginProps> = props => {
     apiCall.post("/users/login", data).then(data => {
       console.log(data);
       const { token } = data.data;
+      setAuthToken(token);
       dispatch(login(token))
       navigate('/first');
     }).catch(e => {
@@ -41,8 +42,8 @@ const LoginPage: React.FC<LoginProps> = props => {
       console.log(e);
     });
     // dispatch(login(name!, password!));
+    // login(data);
   }
-  let hg = (<div>dsfdsfs</div>);
 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -53,7 +54,6 @@ const LoginPage: React.FC<LoginProps> = props => {
         <div className={styles.header}>
           <p>SignIn</p>
         </div>
-        {hg}
         <div className={styles.body}>
           <div>
             <p>E-mail</p>

@@ -15,6 +15,7 @@
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_ERROR = "LOGIN_ERROR";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const REGISTER = "REGISTER";
 
 interface LoginRequest {
@@ -22,6 +23,11 @@ interface LoginRequest {
   payload: {
 
   };
+}
+
+interface SetCurrentUser {
+  type: typeof SET_CURRENT_USER;
+  payload: any;
 }
 
 interface LoginSuccess {
@@ -46,4 +52,4 @@ interface Register {
 }
 
 
-export type SignActionTypes = LoginRequest | LoginSuccess | LoginError | Register;
+export type SignActionTypes = LoginRequest | SetCurrentUser | LoginSuccess | LoginError | Register;

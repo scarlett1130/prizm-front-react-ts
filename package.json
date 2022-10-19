@@ -24,6 +24,7 @@
         "config": "^3.3.7",
         "faker": "^5.5.3",
         "hooks": "^0.3.2",
+        "is-empty": "^1.2.0",
         "jsonwebtoken": "^8.5.1",
         "jwt-decode": "^3.1.2",
         "node-hooks": "^0.0.15",

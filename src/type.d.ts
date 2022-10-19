@@ -6,7 +6,9 @@ interface UserInfo {
 }
 
 type UserState = {
-    userInfo: UserInfo;
+    isAuthenticated: boolean,
+    userInfo: UserInfo,
+    loading: boolean
 }
 
 interface ITodo {

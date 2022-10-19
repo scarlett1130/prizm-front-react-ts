@@ -1,7 +1,13 @@
-import React from "react";
-import { Link } from 'react-router-dom'
+import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import styles from "./Header.module.scss";
-import { Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { AppState } from "../../store";
+import setAuthToken from "../../utils/setAuthToken";
+import { logoutUser } from "../../store/user/actions";
+import { Dispatch } from "redux";
 
 const friendOptions = [
   {
@@ -31,6 +37,30 @@ const friendOptions = [
 ]
 
 const Header = () => {
+  const navigate = useNavigate();
+  const dispatch: Dispatch<any> = useDispatch();
+
+  const user = useSelector(
+    (state: AppState) => state.userModule,
+    shallowEqual
+  );
+
+  useEffect(() => {
+    if (user.isAuthenticated === false) {
+      if (window.location.pathname.indexOf('signup') === -1)
+        navigate('/signin');
+    }
+    //Runs only on the first render
+  }, []);
+
+  const sign = () => {
+    if (user.isAuthenticated === true) {
+      dispatch(logoutUser());
+      // setAuthToken(false);
+      // sessionStorage.removeItem('token');
+    }
+    navigate('/signin');
+  }
   return (
     <div className={styles.header}>
       <div className={styles.left}>
@@ -69,6 +99,7 @@ const Header = () => {
           <img className={styles.arrow} src="/images/dropdown.svg" alt="dropdown" />
         </div>
         <div className={styles.wallet}><img src="/images/walletconnect.svg" alt="walletconnect" />Connect Wallet</div>
+        <div className={styles.signin} onClick={(e) => sign()}>{user.isAuthenticated === true ? 'SignOut' : 'SignIn'}</div>
       </div>
     </div>
   );
